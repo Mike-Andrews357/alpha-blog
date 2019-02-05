@@ -1,9 +1,10 @@
 
-
+<div class="text-center"><%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'justify-content-center') %></div>
 <div class="card text-center">
   <div class="card-header">
     <h1 align="center">All Alpha Bloggers</h1>
   </div>
+  
   <%= @users.each do |user| %>
   <div class="card-body">
     <p class="card-text"><%= link_to gravatar_for(user), user_path(user) %></p>
@@ -13,4 +14,6 @@
     <hr>
   </div>
   <% end %>
+  
 </div>
+<div class="text-center"><%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'justify-content-center') %></div>
