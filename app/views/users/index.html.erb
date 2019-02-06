@@ -11,6 +11,9 @@
     <h4 class="card-title"><strong>Description</strong></h4>
     <p class="card-text"><%= link_to user.username, user_path(user) %></p>
     <p class="card-text"><small><%= pluralize(user.articles.count, "article") if user.articles %></small></p>
+    <% if logged_in? and current_user.admin? %>
+      <p class="card-text"><%= link_to "Delete this user", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete the user and all their articles?" } %></p>
+    <% end %>
     <hr>
   </div>
   <% end %>
