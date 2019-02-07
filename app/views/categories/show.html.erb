@@ -1,0 +1,8 @@
+<div class="text-center"><%= will_paginate(@category_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'justify-content-center') %></div>
+<div class="card text-center">
+  <div class="card-header">
+    <h1 align="center"><%= "Category:" + @category.name %></h1>
+  </div>
+  <%= render 'articles/article', obj: @category_articles %>
+</div>
+<div class="text-center"><%= will_paginate(@category_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'justify-content-center') %></div>  
